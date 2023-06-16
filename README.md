@@ -52,12 +52,6 @@ En este caso estoy enviando por body este objeto que significa que solo quiero a
 
 DELETE DOMINIO/api/tickets/id Este endpoint elimina un TICKET y recibe como parámetro el id del ticket que se quiere eliminar.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
 ## Url de producción
 
 La Api ha sido subida a un servidor de heroku la url es la siguiente: https://apidoublevpartner-6da8e919a215.herokuapp.com
