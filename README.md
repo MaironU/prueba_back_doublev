@@ -1,27 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Listado de tecnologías o frameworks utilizados
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ésta api esta desarrollada con el lenguaje PHP version 8.1 y el framework de Laravel version 10, se utilizó git para el versionamiento y heroku como servidor. Es muy fácil de utilizar y ya lo verá más adelante.
 
-## About Laravel
+## Cómo instalar las dependencias y correr el proyecto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A continuación se mostraran los pasos 1 a 1 para poder dejar el proyecto funcionando localmente
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Clonar el siguiente repositorio https://github.com/MaironU/pruebaamericas con el comando git clone https://github.com/MaironU/pruebaamericas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Luego de clonar entrar a la carpeta por consola usando cd pruebaamericas/.
 
-## Learning Laravel
+- Instalar las dependencias correspondientes con el comando composer install, dado el caso que ocurra un error se va a la raiz del proyecto y crea una carpeta llamada vendor y vuelve a ejecutar el comando.
+
+- Una vez instalado las dependencias crear un archivo llamado .env en la raiz del proyecto para añadir la configuración correspondiente de la bdd.
+
+- Una vez creado el archivo .env abrir el archivo .env.example que trae laravel por defecto, copiar toda la información y pegarla en el archivo .env creado anteriormente.
+
+- Luego crear la bdd, usted escoge el nombre que desee, una vez creada la bdd se va al archivo .env y en DB_DATABASE poner el nombre de la base de datos que creó y en DB_PASSWORD poner la contraseña, en caso de no tener contraseña dejar vacío. Ejemplo: DB_DATABASE=nombrebdd y DB_PASSWORD=.
+
+- Una vez configurada la bdd, abrir la consola ubicarse en el proyecto y correr el comando php artisan config:cache.
+
+- Si llegaste hasta aqui ya debes tener la bdd funcionando correctamente.
+
+- Luego vas a ejecutar el comando php artisan serve, para levantar el servidor.
+
+- Y listo ya puedes empezar a usar la Api de tickets.
+
+Importante: recuerda que al momento de ejecutar php artisan ser se te genera una url que es el DOMINIO del proyecto, ese DOMINIO es el que utilizará para hacer las peticiones a la api.
+
+
+## Documentación API
+
+Rutas
+
+- GET DOMINIO/api/tickets Este endpoint obtiene todos los TICKETS que hay en la bdd, de manera paginada, 10 datos por página
+
+- GET DOMINIO/api/tickets/id Este endpoint obtiene un TICKET en específico recibe como parámetro un id de tipo entero que es el id del ticket en la bdd EJEMPLO: DOMINIO/api/tickets/1.
+
+- POST DOMINIO/api/tickets Este endpoint crea un TICKET y recibe como body un objeto como el siguiente:
+{ "user": "Mayron Urieles", "status": "abierto" }, le fecha de creación y actualización se crean automáticamente.
+
+- PUT DOMINIO/api/tickets/id Este endpoint actualiza un TICKET en específico, se debe enviar el id del TICKET a actualizar y como body un objeto con los datos a actualizar, Ejemplo:
+{ "user": "Mayron Urieles Modificado" }
+
+En este caso estoy enviando por body este objeto que significa que solo quiero actualizar el usuario, si deseo actualizar otro dato, podria enviarlo tambien desde el mismo objeto.
+
+DELETE DOMINIO/api/tickets/id Este endpoint elimina un TICKET y recibe como parámetro el id del ticket que se quiere eliminar.
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
@@ -29,26 +53,11 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Url de producción
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+La Api ha sido subida a un servidor de heroku la url es la siguiente: https://apidoublevpartner-6da8e919a215.herokuapp.com
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
+Puede probar la api tanto en local como en producción sin ningún problema
 ## Contributing
 
 Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
