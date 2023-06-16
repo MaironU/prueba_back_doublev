@@ -1,8 +1,13 @@
+## Url de producción
+
+La Api ha sido subida a un servidor de heroku la url es la siguiente: https://apidoublevpartner-6da8e919a215.herokuapp.com
+
+Puede probar la api tanto en local como en producción sin ningún problema
 ## Listado de tecnologías o frameworks utilizados
 
 Ésta api esta desarrollada con el lenguaje PHP version 8.1 y el framework de Laravel version 10, se utilizó git para el versionamiento y heroku como servidor. Es muy fácil de utilizar y ya lo verá más adelante.
 
-## Cómo instalar las dependencias y correr el proyecto
+## Cómo instalar las dependencias y correr el proyecto localmente
 
 A continuación se mostraran los pasos 1 a 1 para poder dejar el proyecto funcionando localmente
 
